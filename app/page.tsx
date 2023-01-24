@@ -1,5 +1,9 @@
 import Image from "next/image";
-import data from "../data.json";
+import { get } from "@vercel/edge-config";
+import { redirect } from "next/navigation";
+
+export const dynamic = "force-dynamic",
+  runtime = "edge";
 
 function TwitterIcon() {
   return (
@@ -85,7 +89,13 @@ function LinkCard({
   );
 }
 
-export default function Home() {
+export default async function HomePage() {
+  const data = await get("linktree");
+
+  if (!data) {
+    redirect("/404");
+  }
+
   return (
     <div className="flex items-center flex-col mx-auto justify-center mt-16 px-8">
       <Image
@@ -96,11 +106,11 @@ export default function Home() {
         alt={data.name}
       />
       <h1 className="font-bold mt-4 text-xl mb-8 text-white">{data.name}</h1>
-      {data.links.map((link) => (
+      {data.links.map((link: any) => (
         <LinkCard key={link.href} {...link} />
       ))}
       <div className="flex items-center gap-2 mt-8 text-white">
-        {data.socials.map((social) => {
+        {data.socials.map((social: any) => {
           if (social.href.includes("twitter")) {
             return (
               <a
