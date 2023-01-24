@@ -1,0 +1,30 @@
+{
+  "name": "Edy Xicón",
+  "avatar": "https://pbs.twimg.com/profile_images/1563210599177265152/_GPraEhR_400x400.jpg",
+  "links": [
+    {
+      "title": "My Personal Site",
+      "href": "https://edyjoel.github.io/Portfolio/",
+      "image": "https://pbs.twimg.com/profile_images/1563210599177265152/_GPraEhR_400x400.jpg"
+    },
+    {
+      "title": "Vercel",
+      "href": "https://vercel.com/"
+    },
+    {
+      "title": "Next.js",
+      "href": "https://nextjs.org/"
+    }
+
+  ],
+  "socials": [
+    {
+      "title": "Twitter",
+      "href": "https://twitter.com/edyjoelx"
+    },
+    {
+      "title": "GitHub",
+      "href": "https://github.com/edyjoel"
+    }
+  ]
+}
